@@ -11,7 +11,7 @@ class Login extends StatelessWidget {
     var deviceDomain = getSizeDomain();
 
     return Scaffold(
-      backgroundColor: const Color(0xFFFAFAFA),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

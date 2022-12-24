@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:memestagram/enums/responsive.dart';
 import 'package:memestagram/widgets/common/w_divider.dart';
+import 'package:memestagram/widgets/common/w_elevated_button.dart';
 import 'package:memestagram/widgets/common/w_textfield.dart';
 import 'package:memestagram/widgets/common/w_textspan.dart';
 import 'package:sizer/sizer.dart';
@@ -96,14 +97,9 @@ class LoginWeb extends StatelessWidget {
                     hintText: 'Password',
                   ),
                   SizedBox(height: 1.5.h),
-                  ElevatedButton(
+                  WElevatedButton(
                     onPressed: () {},
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const <Widget>[
-                        Text('Log in'),
-                      ],
-                    ),
+                    text: 'Log in',
                   ),
                   SizedBox(height: 1.5.h),
                   const WDivider(text: "OR"),
