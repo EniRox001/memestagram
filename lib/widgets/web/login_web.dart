@@ -49,7 +49,7 @@ class LoginWeb extends StatelessWidget {
               height: deviceDomain == PlatformDomains.desktopWeb
                   ? 50.0.h
                   : deviceDomain == PlatformDomains.tabletWeb
-                      ? 40.0.h
+                      ? 45.0.h
                       : 60.0.h,
               width: deviceDomain == PlatformDomains.desktopWeb
                   ? 25.0.w
