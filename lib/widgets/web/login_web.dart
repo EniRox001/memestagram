@@ -11,10 +11,14 @@ class LoginWeb extends StatelessWidget {
   const LoginWeb({
     Key? key,
     required this.deviceDomain,
+    required this.usernameController,
+    required this.passwordController,
   }) : super(key: key);
 
   // ignore: prefer_typing_uninitialized_variables
   final deviceDomain;
+  final TextEditingController usernameController;
+  final TextEditingController passwordController;
 
   @override
   Widget build(BuildContext context) {
@@ -88,11 +92,13 @@ class LoginWeb extends StatelessWidget {
                             : 5.0.h,
                   ),
                   WTextField(
+                    controller: usernameController,
                     deviceDomain: deviceDomain,
                     hintText: 'Phone number, username or email',
                   ),
                   SizedBox(height: 1.5.h),
                   WTextField(
+                    controller: passwordController,
                     deviceDomain: deviceDomain,
                     hintText: 'Password',
                   ),

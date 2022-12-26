@@ -1,15 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:memestagram/cloud_functions/server.dart';
 import 'package:memestagram/widgets/common/w_divider.dart';
 import 'package:memestagram/widgets/common/w_elevated_button.dart';
 import 'package:memestagram/widgets/common/w_textfield.dart';
 import 'package:memestagram/widgets/common/w_textspan.dart';
 import 'package:sizer/sizer.dart';
 
-class LoginMobile extends StatelessWidget {
-  const LoginMobile({super.key, this.deviceDomain});
+String snackbarText = 'no login details provided';
+
+class LoginMobile extends StatefulWidget {
+  const LoginMobile(
+      {super.key,
+      this.deviceDomain,
+      required this.usernameController,
+      required this.passwordController});
   // ignore: prefer_typing_uninitialized_variables
   final deviceDomain;
+  final TextEditingController usernameController;
+  final TextEditingController passwordController;
+
+  @override
+  State<LoginMobile> createState() => _LoginMobileState();
+}
+
+class _LoginMobileState extends State<LoginMobile> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -26,12 +41,14 @@ class LoginMobile extends StatelessWidget {
           ),
           SizedBox(height: 3.5.h),
           WTextField(
-            deviceDomain: deviceDomain,
+            controller: widget.usernameController,
+            deviceDomain: widget.deviceDomain,
             hintText: 'Phone number, username or email',
           ),
           SizedBox(height: 1.5.h),
           WTextField(
-            deviceDomain: deviceDomain,
+            controller: widget.passwordController,
+            deviceDomain: widget.deviceDomain,
             hintText: 'Password',
           ),
           Row(
@@ -50,7 +67,13 @@ class LoginMobile extends StatelessWidget {
             ],
           ),
           WElevatedButton(
-            onPressed: () {},
+            onPressed: () async {
+              await getHttp().then((value) {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text(value),
+                ));
+              });
+            },
             text: 'Log in',
           ),
           TextButton(
