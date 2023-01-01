@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memestagram/cloud_functions/server.dart';
 import 'package:memestagram/providers/login_provider.dart';
+import 'package:memestagram/views/login_signup/signup.dart';
 import 'package:memestagram/widgets/common/w_divider.dart';
 import 'package:memestagram/widgets/common/w_elevated_button.dart';
 import 'package:memestagram/widgets/common/w_textfield.dart';
@@ -100,7 +101,14 @@ class _LoginMobileState extends State<LoginMobile> {
           WTextSpan(
             textOne: 'Don\'t have an account? ',
             textTwo: 'Sign up',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Signup(),
+                ),
+              );
+            },
           ),
         ],
       ),

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:memestagram/cloud_functions/server.dart';
 import 'package:memestagram/enums/responsive.dart';
 import 'package:memestagram/views/login_signup/login.dart';
+import 'package:memestagram/views/login_signup/signup.dart';
 import 'package:memestagram/widgets/common/w_divider.dart';
 import 'package:memestagram/widgets/common/w_elevated_button.dart';
 import 'package:memestagram/widgets/common/w_textfield.dart';
@@ -33,8 +34,6 @@ class LoginWeb extends StatefulWidget {
 class _LoginWebState extends State<LoginWeb> {
   @override
   Widget build(BuildContext context) {
-    String snackbarText = '';
-
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -196,7 +195,14 @@ class _LoginWebState extends State<LoginWeb> {
                 child: WTextSpan(
                   textOne: 'Don\'t have an account? ',
                   textTwo: 'Sign up',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Signup(),
+                      ),
+                    );
+                  },
                 ),
               ),
             ),
