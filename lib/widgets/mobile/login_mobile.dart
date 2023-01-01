@@ -1,13 +1,15 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:memestagram/cloud_functions/server.dart';
+import 'package:memestagram/providers/login_provider.dart';
 import 'package:memestagram/widgets/common/w_divider.dart';
 import 'package:memestagram/widgets/common/w_elevated_button.dart';
 import 'package:memestagram/widgets/common/w_textfield.dart';
 import 'package:memestagram/widgets/common/w_textspan.dart';
 import 'package:sizer/sizer.dart';
-
-String snackbarText = 'no login details provided';
+import 'package:provider/provider.dart';
 
 class LoginMobile extends StatefulWidget {
   const LoginMobile(
@@ -68,11 +70,17 @@ class _LoginMobileState extends State<LoginMobile> {
           ),
           WElevatedButton(
             onPressed: () async {
-              await getHttp().then((value) {
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text(value),
-                ));
-              });
+              await login(context).then(
+                (value) =>
+                    context.read<LoginProvider>().setLoginResponse(value),
+              );
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    context.read<LoginProvider>().response,
+                  ),
+                ),
+              );
             },
             text: 'Log in',
           ),
