@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memestagram/providers/login_provider.dart';
+import 'package:memestagram/utils/colors.dart';
 import 'package:memestagram/views/login_signup/login.dart';
 import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
@@ -29,13 +30,13 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         tabBarTheme: const TabBarTheme(
-          labelColor: Colors.black,
+          labelColor: AppColors.black,
         ),
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.white,
+          backgroundColor: AppColors.white,
           iconTheme: IconThemeData(
-              color: Colors
-                  .black), // set backbutton color here which will reflect in all screens.
+            color: AppColors.black,
+          ), // set backbutton color here which will reflect in all screens.
         ),
       ),
       home: Sizer(

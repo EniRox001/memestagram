@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memestagram/utils/colors.dart';
 
 class SignupMobileTwo extends StatefulWidget {
   const SignupMobileTwo({super.key});
@@ -28,7 +29,7 @@ class _SignupMobileTwoState extends State<SignupMobileTwo>
           style: Theme.of(context).textTheme.titleLarge,
         ),
         bottom: TabBar(
-          indicatorColor: Colors.black,
+          indicatorColor: AppColors.black,
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
           controller: _tabController,
           tabs: const <Widget>[

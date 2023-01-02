@@ -19,7 +19,6 @@ class _LoginState extends State<Login> {
     var deviceDomain = getSizeDomain();
 
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
