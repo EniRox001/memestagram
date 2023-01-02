@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:memestagram/enums/responsive.dart';
+import 'package:memestagram/widgets/mobile/signup_mobile_one.dart';
+import 'package:memestagram/widgets/web/signup_web.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -8,13 +11,24 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
+  var deviceDomain = getSizeDomain();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sign up'),
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Visibility(
+              visible: deviceDomain != PlatformDomains.native,
+              replacement: const SignupMobileOne(),
+              child: const SignupWeb(),
+            ),
+          ],
+        ),
       ),
-      body: Container(),
     );
   }
 }

@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:memestagram/cloud_functions/server.dart';
 import 'package:memestagram/enums/responsive.dart';
-import 'package:memestagram/views/login_signup/login.dart';
 import 'package:memestagram/views/login_signup/signup.dart';
 import 'package:memestagram/widgets/common/w_divider.dart';
 import 'package:memestagram/widgets/common/w_elevated_button.dart';

@@ -2,8 +2,6 @@
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:memestagram/providers/login_provider.dart';
-import 'package:provider/provider.dart';
 import 'package:memestagram/views/login_signup/login.dart';
 
 var dio = Dio();

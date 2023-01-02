@@ -27,6 +27,17 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        tabBarTheme: const TabBarTheme(
+          labelColor: Colors.black,
+        ),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(
+              color: Colors
+                  .black), // set backbutton color here which will reflect in all screens.
+        ),
+      ),
       home: Sizer(
         builder: (context, orientation, deviceType) {
           return const Login();
