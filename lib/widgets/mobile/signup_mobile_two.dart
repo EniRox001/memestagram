@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:memestagram/utils/colors.dart';
+import 'package:memestagram/widgets/common/w_elevated_button.dart';
+import 'package:sizer/sizer.dart';
 
 class SignupMobileTwo extends StatefulWidget {
   const SignupMobileTwo({super.key});
@@ -24,32 +27,36 @@ class _SignupMobileTwoState extends State<SignupMobileTwo>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: Text(
           'Enter Phone Number or Email',
           style: Theme.of(context).textTheme.titleLarge,
         ),
         bottom: TabBar(
           indicatorColor: AppColors.black,
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          unselectedLabelColor: Colors.grey,
+          padding: const EdgeInsets.symmetric(horizontal: 40.0),
           controller: _tabController,
           tabs: const <Widget>[
-            Tab(
-              text: 'Phone number',
-            ),
-            Tab(
-              text: 'Email',
-            ),
+            Tab(text: 'Phone number'),
+            Tab(text: 'Email'),
           ],
         ),
       ),
       body: TabBarView(
         controller: _tabController,
-        children: const <Widget>[
-          Center(
-            child: Text("It's cloudy here"),
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(20.0.sp),
+            child: Column(
+              children: <Widget>[
+                IntlPhoneField(),
+                WElevatedButton(onPressed: () {}, text: 'Next')
+              ],
+            ),
           ),
-          Center(
-            child: Text("It's rainy here"),
+          const Center(
+            child: Text("Enter email here"),
           ),
         ],
       ),

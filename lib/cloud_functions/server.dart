@@ -8,10 +8,17 @@ var dio = Dio();
 String url = 'http://10.0.2.2:8080';
 String message = '';
 
+void initializeDB() async {
+  try {
+    await dio.get(url);
+    // ignore: empty_catches
+  } catch (e) {}
+}
+
 Future<String> login(BuildContext context) async {
   try {
     var response = await dio.post(
-      'http://10.0.2.2:8080/login',
+      '$url/login',
       data:
           '${usernameController.text.toString()} ${passwordController.text.toString()}',
     );

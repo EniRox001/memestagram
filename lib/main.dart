@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memestagram/cloud_functions/server.dart';
 import 'package:memestagram/providers/login_provider.dart';
 import 'package:memestagram/utils/colors.dart';
 import 'package:memestagram/views/login_signup/login.dart';
@@ -25,10 +26,19 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
+  void initState() {
+    initializeDB();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        primaryTextTheme: Typography().black,
+        textTheme: Typography().black,
+        scaffoldBackgroundColor: AppColors.white,
         tabBarTheme: const TabBarTheme(
           labelColor: AppColors.black,
         ),
