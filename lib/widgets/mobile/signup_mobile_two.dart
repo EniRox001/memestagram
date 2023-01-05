@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:memestagram/utils/colors.dart';
 import 'package:memestagram/widgets/common/w_elevated_button.dart';
 import 'package:memestagram/widgets/common/w_phone_inputfield.dart';
+import 'package:memestagram/widgets/common/w_stock_inputfield.dart';
 import 'package:sizer/sizer.dart';
 
 class SignupMobileTwo extends StatefulWidget {
@@ -17,7 +18,8 @@ class _SignupMobileTwoState extends State<SignupMobileTwo>
     with TickerProviderStateMixin {
   late TabController _tabController;
 
-  TextEditingController phoenNumberController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController();
+  TextEditingController emailAddressController = TextEditingController();
 
   @override
   void initState() {
@@ -53,15 +55,27 @@ class _SignupMobileTwoState extends State<SignupMobileTwo>
             child: Column(
               children: <Widget>[
                 WPhoneInputField(
-                  controller: phoenNumberController,
+                  controller: phoneNumberController,
                   hintText: 'Phone Number',
                 ),
-                WElevatedButton(onPressed: () {}, text: 'Next')
+                WElevatedButton(onPressed: () {}, text: 'Next'),
               ],
             ),
           ),
-          const Center(
-            child: Text("Enter email here"),
+          Padding(
+            padding: EdgeInsets.all(20.0.sp),
+            child: Column(
+              children: [
+                WStockInputField(
+                  controller: emailAddressController,
+                  hintText: 'Email Address',
+                ),
+                const SizedBox(
+                  height: 10.0,
+                ),
+                WElevatedButton(onPressed: () {}, text: 'Next'),
+              ],
+            ),
           ),
         ],
       ),
