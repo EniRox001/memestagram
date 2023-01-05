@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memestagram/cloud_functions/server.dart';
+import 'package:memestagram/providers/form_providers.dart';
 import 'package:memestagram/providers/login_provider.dart';
 import 'package:memestagram/utils/colors.dart';
 import 'package:memestagram/views/login_signup/login.dart';
@@ -11,6 +12,7 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => LoginProvider()),
+        ChangeNotifierProvider(create: (_) => FormProviders()),
       ],
       child: const MyApp(),
     ),

@@ -8,10 +8,12 @@ class WPhoneInputField extends StatelessWidget {
     Key? key,
     required this.controller,
     required this.hintText,
+    this.onChanged,
   }) : super(key: key);
 
   final TextEditingController controller;
   final String hintText;
+  final String Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
