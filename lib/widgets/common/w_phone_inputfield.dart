@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/country_picker_dialog.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:memestagram/utils/colors.dart';
 
 class WPhoneInputField extends StatelessWidget {
   const WPhoneInputField({
@@ -27,14 +28,14 @@ class WPhoneInputField extends StatelessWidget {
           hintText: 'Search Country',
           focusedBorder: OutlineInputBorder(
             borderSide: const BorderSide(
-              color: Colors.black87,
+              color: AppColors.lightDark,
             ),
             borderRadius: BorderRadius.circular(
               10.0,
             ),
           ),
           border: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.black12),
+            borderSide: const BorderSide(color: AppColors.lighterDark),
             borderRadius: BorderRadius.circular(
               10.0,
             ),
@@ -45,14 +46,14 @@ class WPhoneInputField extends StatelessWidget {
         hintText: hintText,
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(
-            color: Colors.black87,
+            color: AppColors.lightDark,
           ),
           borderRadius: BorderRadius.circular(
             10.0,
           ),
         ),
         border: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.black12),
+          borderSide: const BorderSide(color: AppColors.lighterDark),
           borderRadius: BorderRadius.circular(
             10.0,
           ),
