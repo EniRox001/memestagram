@@ -1,16 +1,11 @@
 # memestagram
 
-A new Flutter project.
+Instagram Clone Made entirely with Flutter
 
-## Getting Started
+## Overview
 
-This project is a starting point for a Flutter application.
+This is the starting file used for the instagram clone that will be made entirely with flutter. The state management for this application would be: 
 
-A few resources to get you started if this is your first Flutter project:
+* Provider
+* GetX (Optional)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
