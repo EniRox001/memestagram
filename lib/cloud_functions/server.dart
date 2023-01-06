@@ -7,6 +7,7 @@ import 'package:memestagram/views/login_signup/login.dart';
 var dio = Dio();
 String url = 'http://10.0.2.2:8080';
 String message = '';
+String otpMessage = '';
 
 void initializeDB() async {
   try {
@@ -36,10 +37,13 @@ Future<String> login(BuildContext context) async {
   return message;
 }
 
-Future verifyOtp(String data) async {
-  var response = await dio.post(
-    '$url/otp',
-    data: data,
-  );
-  print(response.data);
+Future<String> verifyOtp(String data) async {
+  try {
+    var response = await dio.post(
+      '$url/otp',
+      data: data,
+    );
+    return response.data;
+  } catch (e) {}
+  return otpMessage;
 }
