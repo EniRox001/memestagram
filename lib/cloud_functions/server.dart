@@ -10,7 +10,9 @@ String message = '';
 
 void initializeDB() async {
   try {
-    await dio.get(url);
+    Response response = await dio.get(url);
+    // ignore: avoid_print
+    print(response);
     // ignore: empty_catches
   } catch (e) {}
 }
@@ -32,4 +34,12 @@ Future<String> login(BuildContext context) async {
     return message;
   }
   return message;
+}
+
+Future verifyOtp(String data) async {
+  var response = await dio.post(
+    '$url/otp',
+    data: data,
+  );
+  print(response.data);
 }

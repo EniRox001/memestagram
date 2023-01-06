@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:memestagram/providers/form_providers.dart';
 import 'package:memestagram/utils/colors.dart';
-
-import 'package:provider/provider.dart';
-import 'package:memestagram/utils/validators.dart';
 
 class WStockInputField extends StatelessWidget {
   const WStockInputField(

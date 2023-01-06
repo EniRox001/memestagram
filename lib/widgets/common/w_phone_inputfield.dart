@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/countries.dart';
 import 'package:intl_phone_field/country_picker_dialog.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+
 import 'package:memestagram/utils/colors.dart';
 
 class WPhoneInputField extends StatelessWidget {
@@ -8,16 +10,17 @@ class WPhoneInputField extends StatelessWidget {
     Key? key,
     required this.controller,
     required this.hintText,
-    this.onChanged,
+    this.onCountryChanged,
   }) : super(key: key);
 
   final TextEditingController controller;
   final String hintText;
-  final String Function(String)? onChanged;
+  final void Function(Country)? onCountryChanged;
 
   @override
   Widget build(BuildContext context) {
     return IntlPhoneField(
+      onCountryChanged: onCountryChanged,
       controller: controller,
       initialCountryCode: 'NG',
       flagsButtonMargin: const EdgeInsets.only(left: 20.0),
@@ -61,7 +64,6 @@ class WPhoneInputField extends StatelessWidget {
           ),
         ),
       ),
-      onChanged: (phone) {},
     );
   }
 }

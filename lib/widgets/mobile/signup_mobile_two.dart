@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memestagram/cloud_functions/server.dart';
 import 'package:memestagram/providers/form_providers.dart';
 import 'package:memestagram/utils/colors.dart';
 import 'package:memestagram/utils/validators.dart';
@@ -32,7 +33,6 @@ class _SignupMobileTwoState extends State<SignupMobileTwo>
 
   @override
   Widget build(BuildContext context) {
-    bool changeColor = false;
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -61,10 +61,15 @@ class _SignupMobileTwoState extends State<SignupMobileTwo>
                 WPhoneInputField(
                   controller: phoneNumberController,
                   hintText: 'Phone Number',
+                  onCountryChanged: (val) {
+                    context.read<FormProviders>().setCountryCode(val.dialCode);
+                  },
                 ),
                 WElevatedButton(
-                    onPressed: () {
-                      print(context.read<FormProviders>().validatedPhoneField);
+                    onPressed: () async {
+                      await verifyOtp(
+                        '+${context.read<FormProviders>().countryCode}${phoneNumberController.text}',
+                      );
                     },
                     text: 'Next',
                     color: AppColors.blue),
@@ -89,7 +94,9 @@ class _SignupMobileTwoState extends State<SignupMobileTwo>
                   height: 10.0,
                 ),
                 WElevatedButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    await verifyOtp(emailAddressController.text);
+                  },
                   text: 'Next',
                   color: context.watch<FormProviders>().validatedField
                       ? AppColors.blue
