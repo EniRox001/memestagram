@@ -18,10 +18,11 @@ class WTextSpan extends StatelessWidget {
     return RichText(
       text: TextSpan(
         children: [
-          TextSpan(text: textOne, style: Theme.of(context).textTheme.subtitle2),
+          TextSpan(
+              text: textOne, style: Theme.of(context).textTheme.titleSmall),
           TextSpan(
             text: textTwo,
-            style: Theme.of(context).textTheme.subtitle2!.copyWith(
+            style: Theme.of(context).textTheme.titleSmall!.copyWith(
                   color: Colors.blueAccent,
                 ),
             recognizer: TapGestureRecognizer()..onTap = onPressed,

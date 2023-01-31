@@ -21,7 +21,7 @@ class WDivider extends StatelessWidget {
         const SizedBox(width: 20.0),
         Text(
           text,
-          style: Theme.of(context).textTheme.subtitle2,
+          style: Theme.of(context).textTheme.titleSmall,
         ),
         const SizedBox(width: 20.0),
         const Expanded(

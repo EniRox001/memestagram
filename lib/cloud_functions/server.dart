@@ -44,6 +44,7 @@ Future<String> verifyOtp(String data) async {
       data: data,
     );
     return response.data;
+    // ignore: empty_catches
   } catch (e) {}
   return otpMessage;
 }
