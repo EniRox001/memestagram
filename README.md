@@ -9,3 +9,4 @@ This is the starting file used for the instagram clone that will be made entirel
 * Provider
 * GetX (Optional)
 
+This application is part of the whole memestagram application. Which also includes a backend written in Dart Frog (Visit repository list for backend)
